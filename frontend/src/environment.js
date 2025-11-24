@@ -1,8 +1,5 @@
-let IS_PROD = true;
-const server = IS_PROD ?
-    "https://apnacollegebackend.onrender.com" :
+const getBackendUrl = () => {
+    return process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
+}
 
-    "http://localhost:8000"
-
-
-export default server;
+export const BACKEND_URL = getBackendUrl();
